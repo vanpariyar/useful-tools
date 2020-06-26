@@ -9,7 +9,7 @@ We try to make some best tool togather to increase people's productivity.
 - make your tool as component.
 - make sure it is Bootstrap friendly ( Not compulsory but recommanded )
 
-1. Sanitize title from 
+### 1. Sanitize title from 
 
 This code From the :- https://gist.github.com/spyesx/561b1d65d4afb595f295
 
