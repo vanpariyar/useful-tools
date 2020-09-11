@@ -4,8 +4,8 @@ export default function SpeechRecognitionTool() {
     
     const[ text, setText ] = useState('')
 
-    const handleSpeech = function(){
-        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+    const handleSpeech = () => {
+        let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
         recognition.lang = 'en-US';
         recognition.interimResults = false;
         recognition.maxAlternatives = 5;
@@ -35,7 +35,7 @@ export default function SpeechRecognitionTool() {
                 <div className="form-group">
                     <button 
                         className="btn btn-primary"
-                        onClick={ handleSpeech() } 
+                        onClick={ handleSpeech } 
                         >
                         Click To Get text
                     </button>
