@@ -39,6 +39,23 @@ This code From the :- https://gist.github.com/spyesx/561b1d65d4afb595f295
 
 ```
 
+### 2. Speech recognition tool
+
+This code From the :- https://davidwalsh.name/speech-recognition
+
+```javascript
+    var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 5;
+    recognition.start();
+
+    recognition.onresult = function(event) {
+        console.log('You said: ', event.results[0][0].transcript);
+    };
+```
+
+
 ---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
