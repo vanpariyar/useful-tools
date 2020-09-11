@@ -13,7 +13,7 @@ export default function SpeechRecognitionTool() {
 
         recognition.onresult = function(event) {
             // console.log('You said: ', event.results[0][0].transcript);
-            setText(event.results[0][0].transcript);
+            setText( text+" "+event.results[0][0].transcript);
         };
     }
 
@@ -37,9 +37,15 @@ export default function SpeechRecognitionTool() {
                         className="btn btn-primary"
                         onClick={ handleSpeech } 
                         >
-                        Click To Get text
+                        Click To Listen Text
                     </button>
-
+                    
+                    <button 
+                        className="btn btn-info ml-2"
+                        onClick={() =>  navigator.clipboard.writeText(text)}
+                        >
+                        Copy Text
+                    </button>
                 </div>
             </div>
         </div>
