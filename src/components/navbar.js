@@ -4,7 +4,7 @@ export default function Navbar() {
     const [menuStatus, setMenuStatus] = useState(0);
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a href="./" className="navbar-brand">Navbar</a>
+            <a href="./" className="navbar-brand">Useful Tools</a>
             <button 
                 className="navbar-toggler" 
                 type="button" 
@@ -23,7 +23,7 @@ export default function Navbar() {
                     <a href="https://github.com/vanpariyar/useful-tools/" className="nav-link" >Features</a>
                 </li>
                 <li className="nav-item">
-                    <a href="#never" className="nav-link disabled">Disabled</a>
+                    <a href="https://vanpariyar.github.io/about/" target="_blank" rel="noopener noreferrer" className="nav-link">Contact</a>
                 </li>
                 </ul>
             </div>
