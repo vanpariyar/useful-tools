@@ -55,6 +55,33 @@ This code From the :- https://davidwalsh.name/speech-recognition
     };
 ```
 
+### 3. Age Diffrence Calculator
+
+```javascript
+const [currentDate, setCurrentDate] = useState(Date.now());
+    const [birthDate, setBirthDate] = useState(Date.now());
+    const [diffrence, setDiffrence] = useState(0);
+    const ONE_DAY = 1000 * 60 * 60 * 24;
+    const ONE_MONTH = 1000 * 3600 * 24 * 12;
+    
+    useEffect(() => {
+        setDiffrence( () => {
+            let timeDiffrence = (new Date(currentDate) - new Date(birthDate).getTime());
+            let year = Math.floor( timeDiffrence / 3.15576e+10);
+            let month = Math.floor( timeDiffrence / ONE_MONTH);
+            let days = Math.floor( timeDiffrence / ONE_DAY);
+            //let diffrenceMonth = Math.floor( new Date( timeDiffrence ).getMonth() )
+            let total = `${year} years`; 
+            return { 
+                year: year, 
+                month: month , 
+                days: days,
+                total: total,
+            }
+        });
+    }, [birthDate, currentDate, ONE_MONTH, ONE_DAY])
+```
+
 
 ---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
