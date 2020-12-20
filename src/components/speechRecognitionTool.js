@@ -18,7 +18,7 @@ export default function SpeechRecognitionTool() {
     }
 
     return (
-        <div className="card mt-5">
+        <div className="card mt-5 mb-5">
             <h5 className="card-header bg-primary text-white">Speech Recognition Tool</h5>
             <div className="card-body">
                 <div className="form-group">
