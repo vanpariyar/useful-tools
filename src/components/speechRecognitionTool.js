@@ -1,4 +1,5 @@
 import React , { useState } from 'react'
+import SupportComponent from './supportComponent';
 
 export default function SpeechRecognitionTool() {
     
@@ -46,6 +47,7 @@ export default function SpeechRecognitionTool() {
                         >
                         Copy Text
                     </button>
+                    <SupportComponent />
                 </div>
             </div>
         </div>

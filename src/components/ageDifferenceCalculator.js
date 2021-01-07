@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import SupportComponent from './supportComponent';
 
 export default function AgeDifferenceCalculator() {
 
@@ -56,6 +57,7 @@ export default function AgeDifferenceCalculator() {
                 <p>Diffrence in months { diffrence.month } </p>
                 <p>Diffrence in Days { diffrence.days } </p>
 
+                <SupportComponent />
             </div>
         </div>
     )

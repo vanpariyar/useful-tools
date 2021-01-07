@@ -1,4 +1,5 @@
 import React, { useState }from 'react'
+import SupportComponent from './supportComponent';
 
 export default function SanitizeTitleTool() {
 
@@ -52,6 +53,7 @@ export default function SanitizeTitleTool() {
                         
                     </textarea>
                 </div>
+                <SupportComponent />
             </div>
         </div>
     )
