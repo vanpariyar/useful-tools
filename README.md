@@ -8,6 +8,15 @@ We try to make some best tool togather to increase people's productivity.
 - Feel Free To contribute :+1:
 - make your tool as component.
 - make sure it is Bootstrap friendly ( Not compulsory but recommanded )
+- It will sound funny, But try to do not use NPM modules ( Because of Updates )
+
+### Installation
+
+1. `git clone <REPO>`
+2. In folder `npm install`
+3. To run in Local server `npm start`
+
+> no need to create build we are using :octocat: github actions for this
 
 ### 1. Sanitize title from 
 
@@ -35,6 +44,17 @@ This code From the :- https://gist.github.com/spyesx/561b1d65d4afb595f295
             .replace( /\//g, '' ); // collapse all forward-slashes
 
         return str;
+    }
+
+    function toCamelCase(str){
+        var arr= str.match(/[a-z]+|\d+/gi);
+        return arr.map((m,i)=>{
+            let low = m.toLowerCase();
+            if (i!==0){
+                low = low.split('').map((s,k)=>k===0?s.toUpperCase():s).join``
+            }
+            return low;
+        }).join``;
     }
 
 ```
