@@ -47,7 +47,10 @@ This code From the :- https://gist.github.com/spyesx/561b1d65d4afb595f295
     }
 
     function toCamelCase(str){
-        var arr= str.match(/[a-z]+|\d+/gi);
+        let arr= str.match(/[a-z]+|\d+/gi);
+    
+        if( !arr ) { return ''; }
+
         return arr.map((m,i)=>{
             let low = m.toLowerCase();
             if (i!==0){
@@ -135,27 +138,27 @@ function addTimes(startTime, endTime) {
 
 ```javascript
 const [currentDate, setCurrentDate] = useState(Date.now());
-    const [birthDate, setBirthDate] = useState(Date.now());
-    const [diffrence, setDiffrence] = useState(0);
-    const ONE_DAY = 1000 * 60 * 60 * 24;
-    const ONE_MONTH = 1000 * 3600 * 24 * 12;
-    
-    useEffect(() => {
-        setDiffrence( () => {
-            let timeDiffrence = (new Date(currentDate) - new Date(birthDate).getTime());
-            let year = Math.floor( timeDiffrence / 3.15576e+10);
-            let month = Math.floor( timeDiffrence / ONE_MONTH);
-            let days = Math.floor( timeDiffrence / ONE_DAY);
-            //let diffrenceMonth = Math.floor( new Date( timeDiffrence ).getMonth() )
-            let total = `${year} years`; 
-            return { 
-                year: year, 
-                month: month , 
-                days: days,
-                total: total,
-            }
-        });
-    }, [birthDate, currentDate, ONE_MONTH, ONE_DAY])
+const [birthDate, setBirthDate] = useState(Date.now());
+const [diffrence, setDiffrence] = useState(0);
+const ONE_DAY = 1000 * 60 * 60 * 24;
+const ONE_MONTH = 1000 * 3600 * 24 * 12;
+
+useEffect(() => {
+    setDiffrence( () => {
+        let timeDiffrence = (new Date(currentDate) - new Date(birthDate).getTime());
+        let year = Math.floor( timeDiffrence / 3.15576e+10);
+        let month = Math.floor( timeDiffrence / ONE_MONTH);
+        let days = Math.floor( timeDiffrence / ONE_DAY);
+        //let diffrenceMonth = Math.floor( new Date( timeDiffrence ).getMonth() )
+        let total = `${year} years`; 
+        return { 
+            year: year, 
+            month: month , 
+            days: days,
+            total: total,
+        }
+    });
+}, [birthDate, currentDate, ONE_MONTH, ONE_DAY])
 ```
 
 

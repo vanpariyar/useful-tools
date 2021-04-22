@@ -3,7 +3,7 @@ import SupportComponent from './supportComponent';
 
 export default function SanitizeTitleTool() {
 
-    const [text, setText] = useState('Demo Text');
+    const [text, setText] = useState('');
     const [selectType, setSelectType] = useState('sanitize');
 
     const string_to_slug = function (str)
@@ -31,6 +31,9 @@ export default function SanitizeTitleTool() {
 
     function toCamelCase(str){
         let arr= str.match(/[a-z]+|\d+/gi);
+    
+        if( !arr ) { return ''; }
+
         return arr.map((m,i)=>{
             let low = m.toLowerCase();
             if (i!==0){
