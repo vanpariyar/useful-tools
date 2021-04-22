@@ -8,6 +8,15 @@ We try to make some best tool togather to increase people's productivity.
 - Feel Free To contribute :+1:
 - make your tool as component.
 - make sure it is Bootstrap friendly ( Not compulsory but recommanded )
+- It will sound funny, But try to do not use NPM modules ( Because of Updates )
+
+### Installation
+
+1. `git clone <REPO>`
+2. In folder `npm install`
+3. To run in Local server `npm start`
+
+> no need to create build we are using :octocat: github actions for this
 
 ### 1. Sanitize title from 
 
@@ -37,6 +46,17 @@ This code From the :- https://gist.github.com/spyesx/561b1d65d4afb595f295
         return str;
     }
 
+    function toCamelCase(str){
+        var arr= str.match(/[a-z]+|\d+/gi);
+        return arr.map((m,i)=>{
+            let low = m.toLowerCase();
+            if (i!==0){
+                low = low.split('').map((s,k)=>k===0?s.toUpperCase():s).join``
+            }
+            return low;
+        }).join``;
+    }
+
 ```
 
 ### 2. Speech recognition tool
@@ -55,7 +75,63 @@ This code From the :- https://davidwalsh.name/speech-recognition
     };
 ```
 
-### 3. Age Diffrence Calculator
+### 3. Recap Text To Total Time Converter
+
+Thanks to This code From the :- https://gist.github.com/joseluisq/dc205abcc9733630639eaf43e267d63f
+
+```javascript
+const [recapText, setRecapText] = useState('10:20 \n 0:30 10:20');
+const [totalTime, setTotalTime] = useState('Add Recap Text');
+
+useEffect( () => {
+    let regularExpression = /\d{1,}:\d{2}/g;
+    let times;
+    times = recapText.match(regularExpression);
+    times =  times ? times.reduce((total, currentValue) => total = addTimes(total, currentValue)) : times;
+    setTotalTime(times);
+},[recapText]);
+
+
+function addTimes(startTime, endTime) {
+    var times = [ 0, 0, 0 ]
+    var max = times.length
+
+    var a = (startTime || '').split(':')
+    var b = (endTime || '').split(':')
+
+    // normalize time values
+    for (var i = 0; i < max; i++) {
+        a[i] = isNaN(parseInt(a[i])) ? 0 : parseInt(a[i])
+        b[i] = isNaN(parseInt(b[i])) ? 0 : parseInt(b[i])
+    }
+
+    // store time values
+    for (i = 0; i < max; i++) {
+        times[i] = a[i] + b[i]
+    }
+
+    var hours = times[0]
+    var minutes = times[1]
+    var seconds = times[2]
+
+    if (seconds >= 60) {
+        var m = (seconds / 60) << 0
+        minutes += m
+        seconds -= 60 * m
+    }
+
+    if (minutes >= 60) {
+        var h = (minutes / 60) << 0
+        hours += h
+        minutes -= 60 * h
+    }
+
+    return ('0' + hours).slice(-2) + ':' + ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2)
+}
+```
+
+
+### 4. Age Diffrence Calculator
 
 ```javascript
 const [currentDate, setCurrentDate] = useState(Date.now());

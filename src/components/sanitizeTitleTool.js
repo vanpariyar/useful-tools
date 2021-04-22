@@ -1,7 +1,10 @@
 import React, { useState }from 'react'
+import SupportComponent from './supportComponent';
 
 export default function SanitizeTitleTool() {
 
+    const [text, setText] = useState('Demo Text');
+    const [selectType, setSelectType] = useState('sanitize');
 
     const string_to_slug = function (str)
     {
@@ -25,7 +28,24 @@ export default function SanitizeTitleTool() {
 
         return str;
     }
-    const [text, setText] = useState('');
+
+    function toCamelCase(str){
+        let arr= str.match(/[a-z]+|\d+/gi);
+        return arr.map((m,i)=>{
+            let low = m.toLowerCase();
+            if (i!==0){
+                low = low.split('').map((s,k)=>k===0?s.toUpperCase():s).join``
+            }
+            return low;
+        }).join``;
+    }
+
+    function handleBySelectedMode(str){
+        if( selectType === 'sanitize' ){
+            return string_to_slug(str);
+        }
+        return toCamelCase(str);
+    }
 
     return (
         <div className="card">
@@ -43,15 +63,23 @@ export default function SanitizeTitleTool() {
                     />
                 </div>
                 <div className="form-group">
+                    <label htmlFor="sanitize-mode-select">Select Tool:</label>
+                    <select className="form-control" id="sanitize-mode-select" value={ selectType } onChange={ (e) => setSelectType( e.target.value ) }>
+                        <option value="sanitize">sanitize-tool</option>
+                        <option value="camelcase">CamelCaseTool</option>
+                    </select>
+                </div>
+                <div className="form-group">
                     <label htmlFor="exampleFormControlTextarea1">Your Text</label>
                     <textarea 
-                        defaultValue={ string_to_slug( text ) } 
+                        value={ handleBySelectedMode( text ) }
+                        onChange={ (e) => "nothing" } 
                         className="form-control" 
                         id="exampleFormControlTextarea1" 
                         rows="3">
-                        
                     </textarea>
                 </div>
+                <SupportComponent />
             </div>
         </div>
     )
