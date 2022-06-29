@@ -5,6 +5,7 @@ import AgeDifferenceCalculator from './components/ageDifferenceCalculator';
 import Navbar from './components/navbar'; 
 import SanitizeTitleTool from './components/sanitizeTitleTool';
 import SpeechRecognitionTool from './components/speechRecognitionTool'
+import SumOfNumbersFromText from './components/sumOfNumbersFromText';
 import SumYourTimeFromRecap from './components/sumYourTimeFromRecap';
 
 
@@ -17,9 +18,10 @@ function App() {
           <div className="col-sm-3"></div>
           <div className="col-sm-6 mt-5">
            <SanitizeTitleTool /> 
-           <SpeechRecognitionTool /> 
            <SumYourTimeFromRecap />
+           <SumOfNumbersFromText />
            <AgeDifferenceCalculator />
+           <SpeechRecognitionTool /> 
           </div>
           <div className="col-sm-3"></div>
         </div>

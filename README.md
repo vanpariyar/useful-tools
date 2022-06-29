@@ -133,8 +133,26 @@ function addTimes(startTime, endTime) {
 }
 ```
 
+### 4. Sum only Number Value from Text To Total Count
 
-### 4. Age Diffrence Calculator
+```javascript
+const [recapText, setRecapText] = useState('100/- For Tour \n400/- skate board \n500/- demo');
+    const [total, setTotal] = useState('Add Recap Text');
+
+    useEffect( () => {
+        let regularExpression = /\d+/g;
+        let times;
+        times = recapText.match(regularExpression);
+        times =  times ? times.reduce((total, currentValue) => total = addTimes(total, currentValue)) : times;
+        setTotal(times);
+    },[recapText]);
+    
+    function addTimes(startTime, endTime) {
+       return  parseInt(startTime) + parseInt(endTime);
+    }
+```
+
+### 5. Age Diffrence Calculator
 
 ```javascript
 const [currentDate, setCurrentDate] = useState(Date.now());
