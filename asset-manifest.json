@@ -1,20 +1,14 @@
 {
   "files": {
-    "main.css": "/useful-tools/static/css/main.c126b7af.chunk.css",
-    "main.js": "/useful-tools/static/js/main.4f0c500e.chunk.js",
-    "main.js.map": "/useful-tools/static/js/main.4f0c500e.chunk.js.map",
-    "runtime-main.js": "/useful-tools/static/js/runtime-main.7dd2ba6a.js",
-    "runtime-main.js.map": "/useful-tools/static/js/runtime-main.7dd2ba6a.js.map",
-    "static/js/2.4771216c.chunk.js": "/useful-tools/static/js/2.4771216c.chunk.js",
-    "static/js/2.4771216c.chunk.js.map": "/useful-tools/static/js/2.4771216c.chunk.js.map",
+    "main.css": "/useful-tools/static/css/main.eac51d35.css",
+    "main.js": "/useful-tools/static/js/main.64536bfb.js",
+    "static/media/bootstrap.min.css.map": "/useful-tools/static/media/bootstrap.min.css.613c8caf4ddcab52f935.map",
     "index.html": "/useful-tools/index.html",
-    "static/css/main.c126b7af.chunk.css.map": "/useful-tools/static/css/main.c126b7af.chunk.css.map",
-    "static/js/2.4771216c.chunk.js.LICENSE.txt": "/useful-tools/static/js/2.4771216c.chunk.js.LICENSE.txt"
+    "main.eac51d35.css.map": "/useful-tools/static/css/main.eac51d35.css.map",
+    "main.64536bfb.js.map": "/useful-tools/static/js/main.64536bfb.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.7dd2ba6a.js",
-    "static/js/2.4771216c.chunk.js",
-    "static/css/main.c126b7af.chunk.css",
-    "static/js/main.4f0c500e.chunk.js"
+    "static/css/main.eac51d35.css",
+    "static/js/main.64536bfb.js"
   ]
 }
